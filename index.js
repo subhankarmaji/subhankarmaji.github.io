@@ -1,3 +1,23 @@
+var indexbtn = document.getElementById("index-btn");
+var indexnav = document.getElementById("index-nav");
+var index = document.getElementById("index");
+
+indexnav.style.right = "-250px";
+indexbtn.onclick = function () {
+    if (indexnav.style.right == "-250px") {
+        indexnav.style.right = "0";
+        index.src = "images/close.png";
+    }
+    else {
+        indexnav.style.right = "-250px";
+        index.src = "images/menu.png";
+    }
+}
+var scroll = new SmoothScroll('a[href*="#"]', {
+    speed: 1000,
+    speedAsDuration: true
+});
+
 const tl= gsap.timeline({defaults: {ease: "Power1.out"} });
 
 tl.to(".text", {y: "0%", duration: 1, stagger: 0.45});
